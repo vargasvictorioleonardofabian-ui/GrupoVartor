@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grupo Vartor Technology</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f7fb;
+}
+
+/* HEADER */
+.navbar{
+    background:linear-gradient(90deg,#03152e,#052a5e);
+}
+
+.navbar-brand{
+    color:white !important;
+    font-weight:bold;
+    font-size:1.4rem;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+}
+
+.nav-link:hover{
+    color:#0ed450 !important;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(90deg,#02142d,#05336f);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-weight:bold;
+}
+
+/* TARJETAS */
+.service-card{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    height:100%;
+    box-shadow:0 0 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+.icon-circle{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#eef4ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+.btn-service{
+    width:100%;
+}
+
+/* ESTADÍSTICAS */
+.stats{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.08);
+    padding:25px;
+}
+
+.stat-number{
+    font-size:2rem;
+    font-weight:bold;
+    color:#215f9c;
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(90deg,#03152e,#052a5e);
+    color:white;
+    padding:25px;
+    margin-top:50px;
+}
+
+.check-icon{
+    font-size:60px;
+    color:#28a745;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+GRUPO VARTOR TECHNOLOGY
+</a>
+
+<button class="navbar-toggler bg-light"
+        data-bs-toggle="collapse"
+        data-bs-target="#menu">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Inicio.html">Inicio</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Nosotros.html">Nosotros</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active text-info" href="#">Servicios</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Productos.html">Productos</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Contacto.html">Contacto</a>
+</li>
+
+</ul>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+
+<h1>Servicios</h1>
+
+<p class="lead">
+Soluciones tecnológicas diseñadas para impulsar tu negocio
+</p>
+
+</div>
+</section>
+
+<!-- SERVICIOS -->
+<div class="container my-5">
+
+<!-- REJILLA DE 12 COLUMNAS -->
+<div class="row g-4">
+
+<!-- 3 + 3 + 3 + 3 = 12 -->
+
+<div class="col-md-3">
+<div class="service-card text-center">
+
+<div class="icon-circle">💻</div>
+
+<h3>Desarrollo de Software</h3>
+
+<p>
+Creamos software a medida para optimizar procesos y potenciar tu negocio.
+</p>
+
+<ul class="text-start">
+<li>Aplicaciones Web</li>
+<li>Sistemas Empresariales</li>
+<li>Software a medida</li>
+</ul>
+
+<button
+class="btn btn-primary btn-service"
+data-bs-toggle="modal"
+data-bs-target="#modalPago">
+Solicitar servicio
+</button>
+
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="service-card text-center">
+
+<div class="icon-circle">☁️</div>
+
+<h3>Infraestructura Cloud</h3>
+
+<p>
+Implementamos soluciones seguras y escalables.
+</p>
+
+<ul class="text-start">
+<li>Migración a la nube</li>
+<li>Servidores Cloud</li>
+<li>Respaldo automático</li>
+<li>Alta disponibilidad</li>
+</ul>
+
+<button
+class="btn btn-primary btn-service"
+data-bs-toggle="modal"
+data-bs-target="#modalPago">
+Solicitar servicio
+</button>
+
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="service-card text-center">
+
+<div class="icon-circle">🛡️</div>
+
+<h3>Ciberseguridad en TI</h3>
+
+<p>
+Protegemos la información y los sistemas de tu empresa las 24 horas al dia.
+</p>
+
+<ul class="text-start">
+<li>Protección de datos</li>
+<li>Evaluación de riesgos</li>
+<li>Respuesta rápida</li>
+</ul>
+
+<button
+class="btn btn-primary btn-service"
+data-bs-toggle="modal"
+data-bs-target="#modalPago">
+Solicitar servicio
+</button>
+
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="service-card text-center">
+
+<div class="icon-circle">🎧</div>
+
+<h3>Soporte Técnico TI</h3>
+
+<p>
+Brindamos asistencia técnica especializada para tu empresa.
+</p>
+
+<ul class="text-start">
+<li>Mesa de ayuda</li>
+<li>Soporte remoto</li>
+<li>Mantenimiento</li>
+</ul>
+
+<button
+class="btn btn-primary btn-service"
+data-bs-toggle="modal"
+data-bs-target="#modalPago">
+Solicitar servicio
+</button>
+
+</div>
+</div>
+
+</div>
+
+<!-- ESTADÍSTICAS -->
+<div class="stats mt-5">
+
+<div class="row text-center">
+
+<div class="col-md-3">
+<div class="stat-number">+200</div>
+<p>Clientes satisfechos</p>
+</div>
+
+<div class="col-md-3">
+<div class="stat-number">+350</div>
+<p>Proyectos realizados</p>
+</div>
+
+<div class="col-md-3">
+<div class="stat-number">+10</div>
+<p>Años de experiencia</p>
+</div>
+
+<div class="col-md-3">
+<div class="stat-number">24/7</div>
+<p>Soporte técnico</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL BOOTSTRAP -->
+<div class="modal fade" id="modalPago">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header border-0">
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="modal">
+</button>
+</div>
+
+<div class="modal-body text-center">
+
+<div class="check-icon">
+✓
+</div>
+
+<h2 class="fw-bold mt-3">
+Confirmación de Pago
+</h2>
+
+<p class="mt-3">
+¿Está seguro de que desea realizar el pago del servicio?
+<br>
+Nuestro equipo procesará su solicitud inmediatamente.
+</p>
+
+</div>
+
+<div class="modal-footer border-0 justify-content-center">
+
+<button
+type="button"
+class="btn btn-secondary"
+data-bs-dismiss="modal">
+Cancelar
+</button>
+
+<button
+type="button"
+class="btn btn-primary">
+Confirmar Pago
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center">
+© 2026 Grupo Vartor Technology - Todos los derechos reservados.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

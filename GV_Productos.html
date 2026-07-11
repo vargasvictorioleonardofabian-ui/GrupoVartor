@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Productos | Grupo Vartor Technology</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f7fb;
+}
+
+/* NAVBAR */
+.navbar{
+    background:linear-gradient(90deg,#03152e,#052a5e);
+}
+
+.navbar-brand{
+    color:white !important;
+    font-weight:bold;
+    font-size:1.4rem;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+}
+
+.nav-link:hover{
+    color:#0ed450 !important;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(90deg,#02142d,#05336f);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-weight:bold;
+}
+
+/* PRODUCTOS */
+.box{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 0 15px rgba(0,0,0,.08);
+}
+
+#buscar{
+    border-radius:10px;
+    padding:12px;
+}
+
+.producto-img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid #ddd;
+    transition:.3s;
+}
+
+.producto-img:hover{
+    transform:scale(1.08);
+}
+
+.table th{
+    background:#215f9c;
+    color:white;
+    text-align:center;
+}
+
+.table td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.btn-comprar{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+.btn-comprar:hover{
+    background:#084298;
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(90deg,#03152e,#052a5e);
+    color:white;
+    padding:25px;
+    margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+GRUPO VARTOR TECHNOLOGY
+</a>
+
+<button class="navbar-toggler bg-light"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Inicio.html">Inicio</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Nosotros.html">Nosotros</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Servicios.html">Servicios</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active text-info" href="GV_Productos.html">
+Productos
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="GV_Contacto.html">Contacto</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="container">
+
+<h1>Nuestros Productos</h1>
+
+<p class="lead">
+Equipos y componentes tecnológicos de alta calidad
+</p>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+<div class="container my-5">
+
+<div class="box">
+
+<h2 class="mb-4 text-center">
+Catálogo de Productos
+</h2>
+
+<input
+type="text"
+id="buscar"
+class="form-control"
+placeholder="Buscar producto..."
+onkeyup="filtrar()">
+
+<div class="text-center mt-3 mb-4">
+
+<button class="btn btn-primary m-1"
+onclick="filtrarCategoria('todos')">
+Todos
+</button>
+
+<button class="btn btn-outline-primary m-1"
+onclick="filtrarCategoria('componentes')">
+Componentes
+</button>
+
+<button class="btn btn-outline-primary m-1"
+onclick="filtrarCategoria('Laptop')">
+Laptop
+</button>
+
+<button class="btn btn-outline-primary m-1"
+onclick="filtrarCategoria('Impresoras')">
+Impresoras
+</button>
+
+<button class="btn btn-outline-primary m-1"
+onclick="filtrarCategoria('PC')">
+PC
+</button>
+
+<button class="btn btn-outline-primary m-1"
+onclick="filtrarCategoria('Multimedia')">
+Multimedia
+</button>
+
+</div>
+
+<div class="table-responsive mt-4">
+
+<table id="tabla" class="table table-hover align-middle">
+
+<tr>
+<th>Imagen</th>
+<th>Código</th>
+<th>Marca</th>
+<th>Modelo</th>
+<th>Precio</th>
+<th>Comprar</th>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlpXQDEtKoTbd-LosOoFNDemKXYzBPAALx1Q&s" class="producto-img"></td>
+<td>P001</td>
+<td>Procesador Intel Core i7</td>
+<td>i7-14700KF</td>
+<td>S/1200</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://dojiw2m9tvv09.cloudfront.net/48881/product/processador-ryzen-7-5700x-34-ghz-46-ghz-am4-ddr4-100-100000926wof-amd-1-12008766.jpg" class="producto-img"></td>
+<td>P002</td>
+<td>Procesador AMD Ryzen 7</td>
+<td>Ryzen 7 5700X</td>
+<td>S/1300</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://cdn.memorykings.pe/files/2023/11/23/349006-MK035852A.jpg" class="producto-img"></td>
+<td>P003</td>
+<td>Memoria RAM 16GB DDR4</td>
+<td>LPX 16GB</td>
+<td>S/250</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA8uB7nGI1xHLkLmMIUu_xT9saJWNy1mMOXg&s" class="producto-img"></td>
+<td>P004</td>
+<td>SSD 1TB NVMe</td>
+<td>NV3</td>
+<td>S/350</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://nsglatinoamerica.pe/wp-content/uploads/2021/09/discoSeagate.jpg" class="producto-img"></td>
+<td>P005</td>
+<td>Disco Duro 2TB</td>
+<td>BARRACUDA</td>
+<td>S/280</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://dojiw2m9tvv09.cloudfront.net/86841/product/1024-122666.png" class="producto-img"></td>
+<td>P006</td>
+<td>Tarjeta Gráfica RTX 4060</td>
+<td>HDMI 2.1a</td>
+<td>S/1800</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="componentes">
+<td><img src="https://smarttech.com.pe/78-large_default/placa-madre-asus-prime-b550-plus-amd-socket-am4-ddr4-dp-hdmi-pn-90mb14u0-m0aay0.jpg" class="producto-img"></td>
+<td>P007</td>
+<td>Placa Madre ASUS B550</td>
+<td>Prime B550M-A</td>
+<td>S/600</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Laptop">
+<td><img src="https://carsaperupoc.vtexassets.com/arquivos/ids/187170-800-800?v=639152741392500000&width=800&height=800&aspect=true" class="producto-img"></td>
+<td>P008</td>
+<td>Asus</td>
+<td>F515EA-WH52</td>
+<td>S/900</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Laptop">
+<td><img src="https://imagenes.deltron.com.pe//images/productos/on-line/items/large/nb/hp/nbhpb5uw7atabm.jpg" class="producto-img"></td>
+<td>P009</td>
+<td>HP</td>
+<td>250 G10</td>
+<td>S/2000</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Impresoras">
+<td><img src="https://promart.vteximg.com.br/arquivos/ids/6898116-1000-1000/image-8d07fd0e389447c4a0b4028dc1cec18e.jpg?v=638169147028300000" class="producto-img"></td>
+<td>P010</td>
+<td>Epson</td>
+<td>L3210</td>
+<td>S/5000</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Impresoras">
+<td><img src="https://www.cybermarket.pe/wp-content/uploads/2022/02/Canon-G2160A.jpg" class="producto-img"></td>
+<td>P011</td>
+<td>Canon</td>
+<td>PIXMA G2160</td>
+<td>S/599</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="PC">
+<td><img src="https://assets.pcfactory.com.pe/public/foto/2570/google_1000.jpg" class="producto-img"></td>
+<td>P012</td>
+<td>Lenovo</td>
+<td>F0GH00VFLD</td>
+<td>S/1,750</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="PC">
+<td><img src="https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/2980/PMP00002927428/full_image-1.jpeg" class="producto-img"></td>
+<td>P013</td>
+<td>Sigma</td>
+<td>INTEL CORE I7</td>
+<td>S/2,649</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Multimedia">
+<td><img src="https://rda.com.mx/product/image/mediumsmall/XP-P601Q-W_6.jpg" class="producto-img"></td>
+<td>P014</td>
+<td>Proyector Sharp</td>
+<td>XP-P601Q-W</td>
+<td>S/3,789</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Multimedia">
+<td><img src="https://hikvision-peru.com/wp-content/uploads/2024/01/KIT2_IP_POE-1.jpg" class="producto-img"></td>
+<td>P015</td>
+<td>Cámaras Seguridad HikVision</td>
+<td>KITIP2_2MP</td>
+<td>S/9,599</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Laptop">
+<td><img src="https://compusystemperu.com/wp-content/uploads/2022/03/latitude3420i5-1.jpg" class="producto-img"></td>
+<td>P016</td>
+<td>Dell</td>
+<td>Latitude 3420</td>
+<td>S/2,667</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Impresoras">
+<td><img src="https://asiscom.com.pe/uploads/21-6-2023/DCP-T220%20(2).jpg" class="producto-img"></td>
+<td>P017</td>
+<td>Brother</td>
+<td>DCP-T220</td>
+<td>S/5,690</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="Laptop">
+<td><img src="https://pcspeed.com.pe/wp-content/uploads/2026/02/A14-52M-74MZ.jpg" class="producto-img"></td>
+<td>P018</td>
+<td>Acer</td>
+<td>ASPIRE 14 IA</td>
+<td>S/7,390</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+<tr data-categoria="PC">
+<td><img src="https://www.apple.com/newsroom/images/product/imac/standard/Apple_imac-magickeyboardnum-magicmouse2-macos-wallpaper_08042020_big.jpg.large.jpg" class="producto-img"></td>
+<td>P019</td>
+<td>Apple</td>
+<td>iMac20,2</td>
+<td>S/9,300</td>
+<td><button class="btn-comprar">🛒 Comprar</button></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function filtrar(){
+
+let input =
+document.getElementById("buscar")
+.value.toLowerCase();
+
+let filas =
+document.querySelectorAll("#tabla tr[data-categoria]");
+
+filas.forEach(fila=>{
+
+let texto =
+fila.innerText.toLowerCase();
+
+fila.style.display =
+texto.includes(input) ? "" : "none";
+
+});
+
+}
+
+function filtrarCategoria(categoria){
+
+let filas =
+document.querySelectorAll("#tabla tr[data-categoria]");
+
+filas.forEach(fila=>{
+
+if(categoria==="todos"){
+
+fila.style.display="";
+
+}else{
+
+fila.style.display=
+fila.dataset.categoria===categoria
+? ""
+: "none";
+
+}
+
+});
+
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

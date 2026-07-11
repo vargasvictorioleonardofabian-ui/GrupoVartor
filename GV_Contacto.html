@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Vartor Technology - Contacto</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        background:#f4f6f9;
+    }
+
+    /* NAVBAR */
+    .navbar{
+        background:linear-gradient(90deg,#03152e,#052a5e);
+        padding:15px 20px;
+    }
+
+    .navbar-brand{
+        color:white !important;
+        font-weight:bold;
+        font-size:1.4rem;
+    }
+
+    .nav-link{
+        color:white !important;
+        margin-left:15px;
+        text-decoration:none;
+        font-weight:500;
+    }
+
+    .nav-link:hover{
+        color:#0ed450 !important;
+    }
+
+    /* CONTENEDOR */
+    .contenedor{
+        width:100%;
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:40px 20px;
+    }
+
+    /* FORMULARIO */
+    .contacto{
+        background:#fff;
+        width:100%;
+        max-width:700px;
+        padding:40px;
+        border-radius:15px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .contacto h1{
+        text-align:center;
+        color:#0d47a1;
+        margin-bottom:10px;
+    }
+
+    .contacto p{
+        text-align:center;
+        color:#666;
+        margin-bottom:30px;
+    }
+
+    .grupo{
+        margin-bottom:20px;
+    }
+
+    label{
+        display:block;
+        margin-bottom:8px;
+        font-weight:bold;
+        color:#333;
+    }
+
+    input,
+    select,
+    textarea{
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:15px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+        outline:none;
+        border-color:#0d47a1;
+    }
+
+    textarea{
+        resize:none;
+    }
+
+    .botones{
+        display:flex;
+        gap:10px;
+    }
+
+    .btn-enviar{
+        flex:1;
+        background:#0d47a1;
+        color:white;
+        border:none;
+        padding:12px;
+        border-radius:8px;
+        cursor:pointer;
+        font-size:16px;
+    }
+
+    .btn-enviar:hover{
+        background:#08306b;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div style="display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto;">
+
+        <div class="navbar-brand">
+            GRUPO VARTOR TECHNOLOGY
+        </div>
+
+        <div>
+            <a class="nav-link" href="GV_Inicio.html">Inicio</a>
+            <a class="nav-link" href="GV_Nosotros.html">Nosotros</a>
+            <a class="nav-link" href="GV_Servicios.html">Servicios</a>
+            <a class="nav-link" href="GV_Productos.html">Productos</a>
+            <a class="nav-link" href="GV_Contacto.html" style="color:#0ed450 !important;">Contacto</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- FORMULARIO -->
+<div class="contenedor">
+
+    <div class="contacto">
+
+        <h1>Contáctanos</h1>
+
+        <p>
+            Complete el siguiente formulario y nuestro equipo de
+            GR Technology se comunicará con usted.
+        </p>
+
+        <form>
+
+            <div class="grupo">
+                <label>Nombre Completo</label>
+                <input type="text" placeholder="Ingrese su nombre completo" required>
+            </div>
+
+            <div class="grupo">
+                <label>Correo Electrónico</label>
+                <input type="email" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="grupo">
+                <label>Teléfono</label>
+                <input
+                    type="text"
+                    placeholder="999999999"
+                    maxlength="9"
+                    pattern="[0-9]{9}"
+                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                    required>
+            </div>
+
+            <div class="grupo">
+                <label>Servicio de Interés</label>
+                <select required>
+                    <option value="">Seleccione una opción</option>
+                    <option>Desarrollo Web</option>
+                    <option>Desarrollo de Software</option>
+                    <option>Soporte Técnico</option>
+                    <option>Consultoría TI</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <label>Mensaje</label>
+                <textarea rows="5" placeholder="Escriba su mensaje aquí..." required></textarea>
+            </div>
+
+            <div class="botones">
+                <button type="submit" class="btn-enviar">
+                    Enviar Mensaje
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
