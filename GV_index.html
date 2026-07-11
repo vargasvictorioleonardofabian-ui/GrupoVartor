@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Vartor Technology</title>
+
+<style>
+
+/* ==========================
+   RESET GENERAL
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f4f8ff,#e9f0ff);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header{
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+/* ==========================
+   LOGO
+========================== */
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#0a2540;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo::before{
+    content:"●";
+    color:#0d6efd;
+    font-size:24px;
+}
+
+/* ==========================
+   MENÚ
+========================== */
+nav a{
+    text-decoration:none;
+    color:#0e1685;
+    margin-left:25px;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+}
+
+/* PSEUDO-CLASE */
+nav a:hover{
+    color:#0d6efd;
+}
+
+/* PSEUDO-ELEMENTO */
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:#0d6efd;
+    border-radius:10px;
+    transition:.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ==========================
+   HERO
+========================== */
+.hero{
+    max-width:1100px;
+    margin:60px auto;
+    background:#fff;
+    border-radius:20px;
+    padding:70px 40px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    animation:mostrar 1s ease;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#0a2540;
+    margin-bottom:15px;
+    animation:fadeDown 1s ease;
+}
+
+.hero p{
+    color:#555;
+    font-size:18px;
+    max-width:750px;
+    margin:auto;
+    margin-bottom:35px;
+    line-height:1.6;
+}
+
+/* ==========================
+   BOTONES
+========================== */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* PSEUDO-ELEMENTO */
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.25);
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:100%;
+}
+
+.btn-register{
+    background:#0d6efd;
+    color:white;
+    box-shadow:0 5px 15px rgba(13,110,253,.3);
+}
+
+.btn-login{
+    background:white;
+    color:#0d6efd;
+    border:2px solid #0d6efd;
+}
+
+/* HOVER BOTONES */
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+.btn-register:hover{
+    background:#084cdf;
+}
+
+.btn-login:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.card{
+    background:#f8faff;
+    width:280px;
+    padding:30px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.card h3{
+    color:#0a2540;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.5;
+}
+
+/* ==========================
+   ESTADÍSTICAS
+========================== */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-top:60px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    text-align:center;
+    transition:.3s;
+}
+
+.stat:hover{
+    transform:scale(1.1);
+}
+
+.stat h2{
+    font-size:42px;
+    color:#0d6efd;
+}
+
+.stat p{
+    color:#555;
+    font-weight:600;
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes mostrar{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer{
+    margin-top:auto;
+    background:#0a2540;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .stats{
+        gap:30px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        GRUPO VARTOR TECHNOLOGY
+    </div>
+
+    <nav>
+        <nav>
+        <nav> 
+            <a href="GV_index.html">Inicio</a> 
+            <a href="GV_Nosotros.html">Nosotros</a> 
+            <a href="GV_Servicios.html">Servicios</a> 
+            <a href="GV_Productos.html">Productos</a> 
+            <a href="GV_Contacto.html">Contacto</a> </nav>
+
+       
+</nav>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>Soluciones Tecnológicas Empresariales</h1>
+
+    <p>
+        Desarrollamos sistemas informáticos modernos para optimizar procesos,
+        gestionar información y mejorar la productividad de empresas e instituciones
+        mediante soluciones seguras, rápidas e innovadoras.
+    </p>
+
+    <div class="buttons">
+
+        <button class="btn btn-register">
+            📄 SOLICITAR SERVICIO
+        </button>
+
+        <button class="btn btn-login">
+            💼 ÁREA DE CLIENTES
+        </button>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+        <h3>📊 Análisis de Información</h3>
+        <p>
+        Procesamiento y organización de datos para una mejor gestión institucional.
+        </p>
+    </div>
+
+         <div class="card">
+         <h3>⚡ Eficiencia Operativa</h3>
+         <p>
+        Herramientas diseñadas para agilizar procesos y reducir tiempos de trabajo.
+         </p>
+</div>
+
+<div class="card">
+    <h3>🔐 Control de Acceso</h3>
+    <p>
+        Administración segura de usuarios y permisos dentro de la plataforma.
+    </p>
+</div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h2>250+</h2>
+            <p>Clientes Atendidos</p>
+        </div>
+
+        <div class="stat">
+            <h2>500+</h2>
+            <p>Proyectos Realizados</p>
+        </div>
+
+        <div class="stat">
+            <h2>99%</h2>
+            <p>Satisfacción</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 | Soluciones Tecnológicas Empresariales
+</footer>
+
+</body>
+</html>
